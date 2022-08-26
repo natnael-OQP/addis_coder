@@ -1,5 +1,4 @@
-import 'package:addis_coder/constant.dart';
-import 'package:addis_coder/screen/home_screen.dart';
+import 'package:addis_coder/screen/login/login_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,11 +15,11 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: bgColor,
+        scaffoldBackgroundColor: Colors.white,
         fontFamily: 'Gordita',
         primarySwatch: Colors.blue,
       ),
-      home: const HomeScreen(),
+      home: const LoginScreen(),
     );
   }
 }
