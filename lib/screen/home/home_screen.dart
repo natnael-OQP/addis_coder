@@ -1,6 +1,7 @@
 import 'package:addis_coder/model/data.dart';
 import 'package:addis_coder/screen/home/components/course_card.dart';
 import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -11,9 +12,11 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: HexColor("#F4F4F4"),
         elevation: 0,
         leading: Image.asset("assets/icons/menu.png"),
         title: const Text(
@@ -26,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Stack(
             children: [
               Container(
-                margin: const EdgeInsets.all(5),
+                margin: EdgeInsets.all(width * .017),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: const BorderRadius.all(Radius.circular(30)),
@@ -42,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Image.asset("assets/icons/person.png"),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 12.0, left: 6),
+                padding: EdgeInsets.only(top: width * .03, left: width * .012),
                 child: Image.asset("assets/icons/notification.png"),
               ),
             ],
@@ -52,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
       ///
       body: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: EdgeInsets.all(width * .03),
         child: GridView.builder(
           gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: 220,

@@ -7,19 +7,22 @@ class WelcomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
         children: [
           Padding(
-            padding: const EdgeInsets.only(bottom: 20),
+            padding: EdgeInsets.only(bottom: width * .03),
             child: Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   SizedBox(
                     child: Container(
-                      padding: const EdgeInsets.only(right: 10),
+                      padding: EdgeInsets.only(right: width * .02),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: const [
@@ -49,7 +52,7 @@ class WelcomeScreen extends StatelessWidget {
                             fontSize: 30,
                           ),
                         ),
-                        const Gap(10),
+                        Gap(width * .03),
                         const Text(
                           "Learning to code is learning to create and innovate",
                           textAlign: TextAlign.center,
@@ -58,13 +61,13 @@ class WelcomeScreen extends StatelessWidget {
                             fontSize: 12,
                           ),
                         ),
-                        const Gap(60),
+                        Gap(height * .06),
                         // indicator
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Container(
-                              margin: const EdgeInsets.all(5),
+                              margin: EdgeInsets.all(width * .02),
                               width: 12,
                               height: 12,
                               decoration: BoxDecoration(
@@ -73,7 +76,7 @@ class WelcomeScreen extends StatelessWidget {
                               ),
                             ),
                             Container(
-                              margin: const EdgeInsets.all(5),
+                              margin: EdgeInsets.all(width * .02),
                               width: 12,
                               height: 12,
                               decoration: BoxDecoration(
@@ -82,7 +85,7 @@ class WelcomeScreen extends StatelessWidget {
                               ),
                             ),
                             Container(
-                              margin: const EdgeInsets.all(5),
+                              margin: EdgeInsets.all(width * .02),
                               width: 12,
                               height: 12,
                               decoration: BoxDecoration(
@@ -97,7 +100,7 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                   // button
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    padding: EdgeInsets.symmetric(horizontal: width * .05),
                     child: SizedBox(
                       width: double.infinity,
                       height: 50,

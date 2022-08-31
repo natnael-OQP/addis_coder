@@ -8,10 +8,13 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  bool _login = false;
+  bool _login = true;
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
+
     return Scaffold(
       backgroundColor: lightGray,
       body: SingleChildScrollView(
@@ -78,15 +81,16 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 Container(
                   width: double.infinity,
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 50, horizontal: 30),
+                  padding: EdgeInsets.symmetric(
+                      vertical: height * .04, horizontal: width * .07),
                   decoration: const BoxDecoration(),
                   child: _login
                       ? Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 15),
+                              padding:
+                                  EdgeInsets.symmetric(vertical: height * .02),
                               child: TextField(
                                 style: const TextStyle(
                                   color: Colors.black,
@@ -108,7 +112,8 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 15),
+                              padding:
+                                  EdgeInsets.symmetric(vertical: height * .02),
                               child: TextField(
                                 style: const TextStyle(
                                   color: Colors.black,
@@ -130,8 +135,10 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                             ),
                             Padding(
-                              padding:
-                                  const EdgeInsets.only(bottom: 25, left: 5),
+                              padding: EdgeInsets.only(
+                                bottom: height * .029,
+                                left: width * .009,
+                              ),
                               child: Text(
                                 "Forgot password ?",
                                 textAlign: TextAlign.left,
@@ -168,7 +175,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
                             Container(
                               width: double.infinity,
-                              padding: const EdgeInsets.symmetric(vertical: 15),
+                              padding:
+                                  EdgeInsets.symmetric(vertical: height * .02),
                               child: const Text(
                                 "Or",
                                 textAlign: TextAlign.center,
@@ -215,7 +223,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ],
                         )
                       : Padding(
-                          padding: const EdgeInsets.only(top: 60),
+                          padding: EdgeInsets.only(top: height * .08),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             mainAxisSize: MainAxisSize.max,
@@ -235,8 +243,9 @@ class _LoginScreenState extends State<LoginScreen> {
                               const SizedBox(height: 20),
                               Container(
                                 width: double.infinity,
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 15),
+                                padding: EdgeInsets.symmetric(
+                                  vertical: height * .02,
+                                ),
                                 child: Text(
                                   "it's allright!",
                                   textAlign: TextAlign.center,

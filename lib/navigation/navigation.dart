@@ -33,14 +33,17 @@ class _NavigationState extends State<Navigation> {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: Center(
         child: _widgetOptions[_selectedIndex],
       ),
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(width * .04),
         child: ClipRRect(
-          borderRadius: const BorderRadius.all(Radius.circular(30)),
+          borderRadius: BorderRadius.all(Radius.circular(width * .1)),
           child: BottomNavigationBar(
             elevation: 0,
             type: BottomNavigationBarType.fixed,
@@ -58,7 +61,6 @@ class _NavigationState extends State<Navigation> {
                     const Icon(Icons.home_filled),
                     Container(
                       color: Colors.white,
-                      // margin: const EdgeInsets.only(top: 5),
                       height: 3,
                       width: 20,
                     )
@@ -74,7 +76,6 @@ class _NavigationState extends State<Navigation> {
                     const Icon(Icons.search),
                     Container(
                       color: Colors.white,
-                      // margin: const EdgeInsets.only(top: 5),
                       height: 3,
                       width: 20,
                     )
@@ -90,7 +91,6 @@ class _NavigationState extends State<Navigation> {
                     const Icon(Icons.gesture_sharp),
                     Container(
                       color: Colors.white,
-                      // margin: const EdgeInsets.only(top: 5),
                       height: 3,
                       width: 20,
                     )
@@ -106,7 +106,6 @@ class _NavigationState extends State<Navigation> {
                     const Icon(Icons.question_mark_outlined),
                     Container(
                       color: Colors.white,
-                      // margin: const EdgeInsets.only(top: 5),
                       height: 3,
                       width: 20,
                     )
@@ -122,7 +121,6 @@ class _NavigationState extends State<Navigation> {
                     const Icon(Icons.code),
                     Container(
                       color: Colors.white,
-                      // margin: const EdgeInsets.only(top: 5),
                       height: 3,
                       width: 20,
                     )

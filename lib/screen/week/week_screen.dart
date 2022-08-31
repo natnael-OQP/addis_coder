@@ -1,5 +1,3 @@
-import 'package:addis_coder/model/data.dart';
-import 'package:addis_coder/screen/home/components/course_card.dart';
 import 'package:addis_coder/screen/week/components/day.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -9,6 +7,9 @@ class WeekScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
+
     return DefaultTabController(
       length: 7,
       child: Scaffold(
@@ -26,7 +27,7 @@ class WeekScreen extends StatelessWidget {
             Stack(
               children: [
                 Container(
-                  margin: const EdgeInsets.all(5),
+                  margin: EdgeInsets.all(width * .02),
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: const BorderRadius.all(Radius.circular(30)),
@@ -42,7 +43,10 @@ class WeekScreen extends StatelessWidget {
                   child: Image.asset("assets/icons/person.png"),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 12.0, left: 6),
+                  padding: EdgeInsets.only(
+                    top: width * .03,
+                    left: width * .012,
+                  ),
                   child: Image.asset("assets/icons/notification.png"),
                 ),
               ],

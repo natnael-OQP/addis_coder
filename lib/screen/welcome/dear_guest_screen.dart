@@ -7,16 +7,17 @@ class DearGuestScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+
     return Scaffold(
       backgroundColor: HexColor("#F94939"),
       body: Container(
-        padding: const EdgeInsets.only(bottom: 40),
+        padding: EdgeInsets.only(bottom: height * .02),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                // margin: const EdgeInsets.only(bottom: 40),
                 decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.all(

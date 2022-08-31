@@ -25,7 +25,7 @@ class QuestionScreen extends StatelessWidget {
           Stack(
             children: [
               Container(
-                margin: const EdgeInsets.all(5),
+                margin: EdgeInsets.all(width * .017),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: const BorderRadius.all(Radius.circular(30)),
@@ -41,7 +41,7 @@ class QuestionScreen extends StatelessWidget {
                 child: Image.asset("assets/icons/person.png"),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 12.0, left: 6),
+                padding: EdgeInsets.only(top: width * .03, left: width * .012),
                 child: Image.asset("assets/icons/notification.png"),
               ),
             ],

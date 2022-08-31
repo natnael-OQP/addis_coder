@@ -7,9 +7,17 @@ class BulletList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
+
     return Container(
       alignment: Alignment.centerLeft,
-      padding: const EdgeInsets.fromLTRB(16, 15, 16, 16),
+      padding: EdgeInsets.fromLTRB(
+        width * .035,
+        width * .033,
+        width * .035,
+        width * .035,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: strings.map((str) {
@@ -23,8 +31,8 @@ class BulletList extends StatelessWidget {
                   height: 1.55,
                 ),
               ),
-              const SizedBox(
-                width: 5,
+              SizedBox(
+                width: width * .02,
               ),
               Expanded(
                 child: Container(

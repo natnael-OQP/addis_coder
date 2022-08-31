@@ -10,10 +10,13 @@ class CourseCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
+
     return Container(
       height: 100,
-      padding: const EdgeInsets.all(8),
-      margin: const EdgeInsets.symmetric(vertical: 10),
+      padding: EdgeInsets.all(width * .02),
+      margin: EdgeInsets.symmetric(vertical: width * .02),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: const BorderRadius.all(Radius.circular(17)),
@@ -32,7 +35,12 @@ class CourseCard extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(20.0),
-            child: Image.network(image),
+            child: Image.network(
+              image,
+              height: 100,
+              width: double.infinity,
+              fit: BoxFit.cover,
+            ),
           ),
           SizedBox(
             width: double.infinity,
