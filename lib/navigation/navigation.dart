@@ -1,4 +1,5 @@
 import 'package:addis_coder/screen/home/home_screen.dart';
+import 'package:addis_coder/screen/practice/practice_screen.dart';
 import 'package:addis_coder/screen/question/question_screen.dart';
 import 'package:addis_coder/screen/type/types_screen.dart';
 import 'package:addis_coder/screen/week/week_screen.dart';
@@ -21,10 +22,7 @@ class _NavigationState extends State<Navigation> {
     WeekScreen(),
     TypesScreen(),
     QuestionScreen(),
-    Text(
-      'Index 4: code',
-      style: optionStyle,
-    ),
+    PracticeScreen(),
   ];
 
   void _onItemTapped(int index) {
