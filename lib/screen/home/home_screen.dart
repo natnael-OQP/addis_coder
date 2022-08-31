@@ -1,8 +1,14 @@
+import 'package:addis_coder/model/data.dart';
+import 'package:addis_coder/screen/home/components/course_card.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
 
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,21 +49,25 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Column(
-        children: const [
-          Center(
-            child: Text(
-              "Python",
-              style: TextStyle(
-                color: Colors.black,
-              ),
-            ),
+
+      ///
+      body: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: GridView.builder(
+          gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+            maxCrossAxisExtent: 220,
+            childAspectRatio: 1,
+            crossAxisSpacing: 20,
+            mainAxisSpacing: 20,
           ),
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: const Icon(Icons.add),
+          itemCount: demo_events.length,
+          itemBuilder: (_, index) {
+            return CourseCard(
+              image: demo_events[index].image,
+              title: demo_events[index].title,
+            );
+          },
+        ),
       ),
     );
   }
