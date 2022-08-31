@@ -1,5 +1,5 @@
 import 'package:addis_coder/screen/home/home_screen.dart';
-import 'package:addis_coder/screen/question/question.dart';
+import 'package:addis_coder/screen/question/question_screen.dart';
 import 'package:addis_coder/screen/type/types_screen.dart';
 import 'package:addis_coder/screen/week/week_screen.dart';
 import 'package:flutter/material.dart';
