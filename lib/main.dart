@@ -1,4 +1,4 @@
-import 'package:addis_coder/screen/home/home_screen.dart';
+import 'package:addis_coder/navigation/navigation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Gordita',
         primarySwatch: Colors.blue,
       ),
-      home: const HomeScreen(),
+      home: const Navigation(),
     );
   }
 }
