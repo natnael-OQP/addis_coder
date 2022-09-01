@@ -18,7 +18,10 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         backgroundColor: HexColor("#F4F4F4"),
         elevation: 0,
-        leading: Image.asset("assets/icons/menu.png"),
+        leading: IconButton(
+          onPressed: () {},
+          icon: Image.asset("assets/icons/menu.png"),
+        ),
         title: const Text(
           "Python",
           style: TextStyle(
@@ -28,21 +31,24 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           Stack(
             children: [
-              Container(
-                margin: EdgeInsets.all(width * .017),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: const BorderRadius.all(Radius.circular(30)),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 1,
-                        blurRadius: 1,
-                        offset:
-                            const Offset(0, 3), // changes position of shadow
-                      ),
-                    ]),
-                child: Image.asset("assets/icons/person.png"),
+              InkWell(
+                onTap: () {},
+                child: Container(
+                  margin: EdgeInsets.all(width * .017),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: const BorderRadius.all(Radius.circular(30)),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 1,
+                          blurRadius: 1,
+                          offset:
+                              const Offset(0, 3), // changes position of shadow
+                        ),
+                      ]),
+                  child: Image.asset("assets/icons/person.png"),
+                ),
               ),
               Padding(
                 padding: EdgeInsets.only(top: width * .03, left: width * .012),
