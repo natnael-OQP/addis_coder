@@ -56,39 +56,65 @@ class PracticeScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: HexColor("#F4F4F4"),
         elevation: 0,
-        leading: Image.asset("assets/icons/menu.png"),
-        title: const Text(
-          "Practice",
-          style: TextStyle(
-            color: Colors.black,
-          ),
+        leading: IconButton(
+          onPressed: () {},
+          icon: Image.asset("assets/icons/menu.png"),
         ),
-        actions: [
-          Stack(
-            children: [
-              Container(
-                margin: EdgeInsets.all(width * .017),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: const BorderRadius.all(Radius.circular(30)),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 1,
-                        blurRadius: 1,
-                        offset:
-                            const Offset(0, 3), // changes position of shadow
+        title: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          // mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            const Text(
+              "Practice",
+              style: TextStyle(
+                color: Colors.black,
+              ),
+            ),
+            Row(
+              children: [
+                IconButton(
+                  alignment: Alignment.centerRight,
+                  onPressed: () {},
+                  icon: Image.asset("assets/icons/undo.png"),
+                  iconSize: 20,
+                ),
+                IconButton(
+                  alignment: Alignment.centerLeft,
+                  onPressed: () {},
+                  icon: Image.asset("assets/icons/redo.png"),
+                  iconSize: 10,
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: Container(
+                    margin: EdgeInsets.only(left: width * .1),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: width * .02,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius:
+                          BorderRadius.all(Radius.circular(width * .02)),
+                      border: const Border(
+                        top: BorderSide(width: 1.0, color: Colors.red),
+                        left: BorderSide(width: 1.0, color: Colors.red),
+                        right: BorderSide(width: 1.0, color: Colors.red),
+                        bottom: BorderSide(width: 1.0, color: Colors.red),
                       ),
-                    ]),
-                child: Image.asset("assets/icons/person.png"),
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: width * .03, left: width * .012),
-                child: Image.asset("assets/icons/notification.png"),
-              ),
-            ],
-          ),
-        ],
+                    ),
+                    child: const Text(
+                      "Run",
+                      style: TextStyle(
+                        color: Colors.red,
+                        fontSize: 12,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
       body: SingleChildScrollView(
         // /!\ important because of the telephone keypad which causes a "RenderFlex overflowed by x pixels on the bottom" error
