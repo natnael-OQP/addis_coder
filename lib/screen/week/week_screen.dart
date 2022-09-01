@@ -16,7 +16,10 @@ class WeekScreen extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.white,
           elevation: 0,
-          leading: Image.asset("assets/icons/menu.png"),
+          leading: IconButton(
+            onPressed: () {},
+            icon: Image.asset("assets/icons/menu.png"),
+          ),
           title: const Text(
             "Week 1",
             style: TextStyle(
@@ -26,21 +29,25 @@ class WeekScreen extends StatelessWidget {
           actions: [
             Stack(
               children: [
-                Container(
-                  margin: EdgeInsets.all(width * .02),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: const BorderRadius.all(Radius.circular(30)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset:
-                              const Offset(0, 3), // changes position of shadow
-                        ),
-                      ]),
-                  child: Image.asset("assets/icons/person.png"),
+                InkWell(
+                  onTap: () {},
+                  child: Container(
+                    margin: EdgeInsets.all(width * .02),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(30)),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 1,
+                            blurRadius: 1,
+                            offset: const Offset(
+                                0, 3), // changes position of shadow
+                          ),
+                        ]),
+                    child: Image.asset("assets/icons/person.png"),
+                  ),
                 ),
                 Padding(
                   padding: EdgeInsets.only(
